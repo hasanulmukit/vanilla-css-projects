@@ -1,0 +1,83 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #121212;
+  color: #fff;
+  gap: 50px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Style 1: Pulsating Glow */
+.style1 h1 {
+  font-size: 6rem;
+  letter-spacing: 0.8rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.style1 h1 span {
+  display: inline-block;
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.style1 h1 span:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+.style1 h1 span:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    color: #6c63ff;
+    text-shadow: 0 0 10px #6c63ff, 0 0 20px #6c63ff, 0 0 40px #6c63ff, 0 0 80px #6c63ff;
+  }
+  50% {
+    color: #ff6b6b;
+    text-shadow: 0 0 15px #ff6b6b, 0 0 30px #ff6b6b, 0 0 60px #ff6b6b, 0 0 100px #ff6b6b;
+  }
+}
+
+/* Style 2: Neon Flicker */
+.style2 h1 {
+  font-size: 5rem;
+  letter-spacing: 0.6rem;
+  color: #0ff;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #00e6e6, 0 0 80px #00cccc;
+}
+
+.style2 h1 span {
+  display: inline-block;
+  animation: flickerNeon 4s infinite;
+}
+
+.style2 h1 span:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.style2 h1 span:nth-child(even) {
+  animation-delay: 0.3s;
+}
+
+@keyframes flickerNeon {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+    filter: blur(1px);
+  }
+}
