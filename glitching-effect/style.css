@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #090909;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.glitch {
+  font-size: 5rem;
+  text-transform: uppercase;
+  position: relative;
+  margin: 20px 0;
+  cursor: pointer;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Style 1: Classic Glitch */
+.style1 {
+  letter-spacing: 6px;
+}
+
+.style1::before,
+.style1::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.style1::before {
+  color: #ff0000;
+  z-index: -1;
+  clip-path: polygon(0 2%, 100% 2%, 100% 100%, 0% 100%);
+  animation: glitch1 2s infinite linear;
+}
+
+.style1::after {
+  color: #00ff00;
+  z-index: -2;
+  clip-path: polygon(0 0, 100% 0, 100% 98%, 0% 98%);
+  animation: glitch2 1.5s infinite linear;
+}
+
+/* Style 2: Split Flicker */
+.style2 {
+  letter-spacing: 8px;
+  color: #ffffff;
+}
+
+.style2::before,
+.style2::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.style2::before {
+  color: #0ff;
+  z-index: -1;
+  animation: flicker 2s infinite linear;
+}
+
+.style2::after {
+  color: #f0f;
+  z-index: -2;
+  animation: flicker 1.7s infinite linear reverse;
+}
+
+/* Style 3: Blur Distortion */
+.style3 {
+  letter-spacing: 4px;
+  color: #fff;
+  text-shadow: 0 0 5px #ff0000, 0 0 10px #00ff00;
+}
+
+.style3:hover {
+  animation: blurEffect 0.3s infinite linear alternate;
+}
+
+.style3::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #00ff00;
+  filter: blur(2px);
+  z-index: -1;
+  animation: distortion 2.5s infinite ease-in-out;
+}
+
+.style3::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ff0000;
+  filter: blur(2px);
+  z-index: -2;
+  animation: distortion 2.3s infinite ease-in-out;
+}
+
+/* Keyframes for Animations */
+
+@keyframes glitch1 {
+  0%, 100% { transform: translate(2px, -2px); }
+  33% { transform: translate(-2px, 2px); }
+  66% { transform: translate(3px, 0px); }
+}
+
+@keyframes glitch2 {
+  0%, 100% { transform: translate(-2px, 2px); }
+  33% { transform: translate(2px, -3px); }
+  66% { transform: translate(-3px, 1px); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes blurEffect {
+  0% { text-shadow: 0 0 10px #fff; }
+  50% { text-shadow: 0 0 20px #0ff, 0 0 40px #f0f; }
+  100% { text-shadow: 0 0 15px #fff; }
+}
+
+@keyframes distortion {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, 5px); }
+  50% { transform: translate(5px, -5px); }
+  75% { transform: translate(-3px, 3px); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
