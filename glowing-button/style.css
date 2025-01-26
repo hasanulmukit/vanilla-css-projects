@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle, #1e293b, #0f172a);
+  color: #fff;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  position: relative;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+/* Glowing Button */
+.glowing-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  overflow: hidden;
+}
+
+.glowing-btn:hover {
+  background: linear-gradient(
+    90deg,
+    #f9d923,
+    #00a19d,
+    #0c87b7,
+    #cb49ff,
+    #ff6666,
+    #f9d923
+  );
+  background-size: 300%;
+  animation: glowingEffect 6s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.glowing-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: -1;
+}
+
+.glowing-btn:hover::before {
+  opacity: 1;
+}
+
+@keyframes glowingEffect {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
+}
+
+/* Neon Button */
+.neon-btn {
+  background: #0c0c0c;
+  color: #00ffdd;
+  border: 2px solid #00ffdd;
+  box-shadow: 0 0 8px #00ffdd, 0 0 16px #00ffdd;
+  text-shadow: 0 0 8px #00ffdd;
+}
+
+.neon-btn:hover {
+  background: #00ffdd;
+  color: #0c0c0c;
+  box-shadow: 0 0 20px #00ffdd, 0 0 30px #00ffdd;
+  text-shadow: none;
+}
