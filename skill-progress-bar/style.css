@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+header p {
+  font-size: 18px;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.progress-container {
+  width: 90%;
+  max-width: 600px;
+}
+
+.progress {
+  position: relative;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 5px 10px; /* Added padding to make names and bar visible */
+}
+
+.progress span {
+  display: block;
+  margin-bottom: 8px; /* Added margin to separate text from the bar */
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  transition: width 1.5s ease-in-out;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.progress:nth-child(1) .progress-bar {
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+}
+
+.progress:nth-child(2) .progress-bar {
+  background: linear-gradient(90deg, #85ffbd, #fffb7b);
+}
+
+.progress:nth-child(3) .progress-bar {
+  background: linear-gradient(90deg, #21d4fd, #b721ff);
+}
+
+.progress:nth-child(4) .progress-bar {
+  background: linear-gradient(90deg, #ff3cac, #784ba0);
+}
+
+.progress:nth-child(5) .progress-bar {
+  background: linear-gradient(90deg, #f7971e, #ffd200);
+}
