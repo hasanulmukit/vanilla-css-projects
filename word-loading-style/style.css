@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(145deg, #141414, #1a1a1a);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.letter {
+  font-size: 4rem;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 2px #db0001; /* Netflix red */
+  position: relative;
+  animation: reveal 1s ease forwards;
+  opacity: 0;
+}
+
+.letter::before {
+  content: attr(data-letter);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #db0001;
+  clip-path: inset(100%);
+  animation: fill 1s ease forwards;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fill {
+  0% {
+    clip-path: inset(100%);
+  }
+  100% {
+    clip-path: inset(0);
+  }
+}
